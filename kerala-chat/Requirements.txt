@@ -1,0 +1,13 @@
+selenium
+python
+flask
+nltk
+from googletrans
+langdetect
+chromedriver
+
+
+
+
+
+

@@ -1,0 +1,85 @@
+<!-- https://javascript.plainenglish.io/basic-chatbot-using-html-css-and-javascript-f534e202befd -->
+<!--&lt;!&ndash;https://www.codewithfaraz.com/content/133/create-your-own-chatbot-with-html-css-and-javascript&ndash;&gt;here this template is used-->
+<!--index.html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Kerala Tourism Chatbot</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700,300">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400&family=Finger+Paint&display=swap">
+</head>
+<!--<body>-->
+
+<body style="background-image: url('/static/images/kerala.jpg'); background-size: cover;" onload="showChatBot()">
+
+  <div class="card" id="card">
+    <div id="header">
+      <h1>Kerala Tourism ChatBox <i class="close zmdi zmdi-close" onclick="closecard('card')"></i></h1>
+
+    </div>
+    <div id="message-section">
+      <div class="message" id="bot"><span id="bot-response">Hello.. I'm listening! Go on..</span></div>
+    </div>
+
+    <div id="input-section">
+      <input id="input" type="text" placeholder="Type a message" name="user" autocomplete="off" autofocus="autofocus" onkeypress="handleKeyPress(event)" />
+      <button class="send" onclick="sendMessage()" type="submit">
+        <div class="circle"><i class="zmdi zmdi-mail-send"></i></div>
+      </button>
+    </div>
+
+  </div>
+
+  <div class="main container" id="main">
+    <div class="heading-section">
+      <h1>Find your bliss in every corner of the globe....</h1>
+    </div>
+
+
+
+<div class="container-suggesion">
+  <div class="parent">
+    <div class="desc">
+       
+        
+    </div>
+   
+</div>
+
+    <div class="child" id="chatbot">
+      
+      <button id="init">START CHAT</button>
+        <div id="chat-box">
+
+        </div>
+        
+    </div>
+
+</div>
+
+
+  </div>
+
+  <button class="button" onclick="show('card')">
+    <div class="circle"><i class="zmdi zmdi-comments zmdi-hc-3x"></i></div>
+  </button>
+
+  <script>
+    function handleKeyPress(event) {
+      if (event.key === 'Enter') {
+        sendMessage();
+      }
+    }
+  </script>
+  <script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script>
+  <script src="{{ url_for('static', filename='js/home.js') }}" type="text/javascript"></script>
+</body>
+
+</html>
